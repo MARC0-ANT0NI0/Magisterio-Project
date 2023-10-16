@@ -1,0 +1,400 @@
+:root { --blanco-hueso:hsl(100, 15%, 92%);
+        --guinda:hsl(358, 87%, 34%);
+        --gris:hsl(100, 2%, 57%);  
+        --white-color: rgb(251,250,252);
+}
+
+*, *:before, *:after    {   
+        box-sizing: border-box;         
+}
+
+/*All these properties are for the cellphone size*/
+body    {
+        background-color: var(--blanco-hueso);
+        position: relative;          
+}
+
+.generalbox     {
+        margin-bottom: 20px;    
+}
+
+.logo   {
+        display: flex;
+        justify-content: center;
+        background: linear-gradient(to bottom left, var(--gris), white 70%);    
+        width: 100%;
+}
+
+.logo img       {
+        width: 60%;
+}
+
+.menu   {
+        border: 1px solid black; 
+        border-radius: 5px; 
+        list-style-type: none; 
+        padding: 0; 
+}
+
+.menu li        {
+        padding: 5px; 
+        border-bottom: 1px solid black;
+}
+
+.menu li:last-of-type   {
+        border-bottom: none;
+}
+
+.menu li:hover  {
+        background: var(--gris);
+}
+
+.menu a {
+        display: flex; 
+        justify-content: center;
+        width: 100%;
+        text-decoration: none; 
+        font-family: Verdana; 
+        font-size: 20px; 
+        color: var(--guinda);  
+}
+
+.menu-button    {
+        content: "";
+        display: block;
+        width: 4em;
+        height: 1.5em;
+        margin-right: 1em;
+        cursor: pointer;
+        background: linear-gradient(var(--guinda) 20%, transparent 20%, transparent 40%, var(--guinda) 40%, var(--guinda) 60%, transparent 60%, transparent 80%, var(--guinda) 80%);
+        margin: auto;
+}
+
+.menu-button:active     {
+        transform: scale(0.9);
+}
+
+main    {
+        position: relative;
+}
+
+.main-nav       {
+        position: absolute;
+        top: 0;
+        left: 6px;
+        width: 98.5%;
+        height: 50vh;
+        background-color: var(--blanco-hueso);
+        transform: scaleY(0);
+        transition: transform 0.5s;
+        transform-origin: top;
+}
+
+.main-nav.translate     {
+        transform: scaleY(1);
+}
+
+.main-menu      {
+        border: 1px solid var(--guinda);
+        margin-top: 0;
+        margin-bottom: 0;
+        list-style-type: mone;
+        padding-left: 0;
+}
+
+.main-menu li   {
+        padding: .5em 1em;
+        border-bottom: 1px solid var(--guinda);
+}
+
+.main-menu li:last-of-type      {
+        border-bottom: none;
+}
+
+.main-menu a    {
+        text-decoration: none;
+        color: var(--guinda);
+        display: block;
+        line-height: 2;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 1.5rem;
+}
+
+.main-menu li:hover      {
+        background: var(--gris);
+}
+
+.container      {
+        border:3px solid var(--guinda); 
+}
+
+.video  {
+        width: 100%;
+}
+
+.text   {
+        height: 500px; 
+        overflow: auto;
+}
+
+.tittlesection  {
+        font-family: Georgia; 
+        font-size: 28px; 
+        text-align: center;
+}
+
+.sectiontext    {
+        margin: 0 10px; 
+        text-align: center;
+        font-family: Verdana; 
+        font-size: 18px;
+}
+
+.slider {
+        border: 1px solid red;
+        width: 540px;
+        height: 260px;
+        position: relative;
+        margin: 5em auto;
+}
+
+.slider [class^=slide]  {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+.slide4 img     {
+        height: 100%;
+}
+
+.slide3 img     {
+        height: 100%;
+}
+
+.slide2 img     {
+        width: 100%;
+}
+
+.slide1 img     {
+        height: 100%;
+}
+
+.slide1 {
+        background-color: rgb(11,87,122);
+        animation: slide1 12s infinite;
+}
+
+@keyframes slide1       {
+        0%, 20%, 99%   {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        24%     {
+                clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+        }
+        25%, 95%     {
+                clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+        }
+}
+
+.slide2 {
+        background-color: var(--white-color);
+        animation: slide2 12s infinite;
+}
+
+@keyframes slide2      {
+        0%, 45%, 100%   {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        49%     {
+                clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+        }
+        50%, 96%     {
+                clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+        }
+}
+
+.slide3 {
+        background-image: linear-gradient(to bottom left, rgb(220, 220, 220), var(--white-color));
+        animation: slide3 12s infinite;
+}
+
+@keyframes slide3       {
+        0%, 70%   {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        74%     {
+                clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+        }
+        75%, 100%     {
+                clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+        }
+}
+
+.slide4 {
+        background-color: var(--white-color);
+        animation: slide4 12s infinite;
+}
+
+.mainfoot   {
+        border: 2px solid var(--gris); 
+        color: var(--guinda); 
+        text-align: center; 
+        font-family: Verdana; 
+        font-size: 1rem;
+}
+
+.mainfoot a  {  padding: 1rem; 
+                color: var(--guinda); 
+                font-size: 1.5rem; 
+                text-decoration: none;
+}
+
+
+
+
+
+
+@media screen and (min-width:600px)     {
+        header  { 
+                width: 100%; 
+                height: 6rem; 
+                display: flex; 
+                align-items: center; 
+                justify-content: space-between; 
+                background: linear-gradient(to bottom, var(--gris), white 70%); 
+                position: fixed;
+                top: 0;
+                z-index: 10;
+        } 
+        
+        .logo   {
+                width: 29%;
+                background: none;
+        } 
+
+        
+        .menu   {
+                display: flex; 
+                justify-content: flex-end; 
+                border: none;
+        } 
+        
+        .menu li        {
+                border-bottom: none; 
+                border-right: 1px solid var(--guinda);
+        } 
+        
+        .menu li:last-of-type   {
+                border-right: none;
+        } 
+        
+        .menu a {
+                font-size: 13px; 
+                font-weight: 600;
+        } 
+        
+        .menu-button    {
+                width: 2em;
+        }
+
+        main    {
+                margin-top: 8rem;
+        }
+}
+
+@media screen and (min-width:700px) {
+        .logo        {
+                width: 25%;
+        }
+
+        .main-nav       {
+                left: 0;
+                width: 50%;
+                height: 80vh;
+                transform: translateX(-100%);
+        }
+
+        .main-mav.translate    {
+                transform: translateX(0);
+        }
+
+        .main-menu      {
+                border: none;
+        }
+
+        .main-menu li:last-of-type      {
+                border-bottom: 1px solid var(--guinda);
+        }
+}
+
+@media screen and (min-width:900px)     {
+        header  {
+                height: 7rem;
+        }
+        
+        .menu a {
+                font-size: 18px;
+        } 
+
+        main    {
+                margin-top: 9rem;
+        }
+        
+        .container      {
+                display: flex; 
+                height: 21rem; 
+        } 
+        
+        .container:nth-child(even) > div:nth-of-type(2)  {
+                order: -1;
+        } 
+        
+        .videocont      {
+                width: 50%;
+        } 
+        
+        .text   {
+                width: 50%; 
+                height: 20rem; 
+                margin: 0 5px;
+        }
+}
+
+@media screen and (min-width:1100px)    {
+        header  {
+                height: 9rem;
+        }
+        .logo        {
+                width: 18%;
+        } 
+        
+        main    {
+                margin-top: 12rem;
+        }
+
+        .main-nav       {
+                width: 35%;
+        }
+
+        .container      {
+                width:65%; 
+                margin: 20px auto;     
+        } 
+
+        .slider {
+                width: 640px;
+                height: 360px;
+        }
+
+        .mainfoot       {
+                font-size: 1.5rem;
+        }
+
+        .mainfoot a     {
+                font-size: 2.5rem;
+        }
+}
