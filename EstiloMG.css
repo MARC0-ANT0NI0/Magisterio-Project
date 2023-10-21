@@ -11,7 +11,7 @@
 /*All these properties are for the cellphone size*/
 body    {
         background-color: var(--blanco-hueso);
-        position: relative;          
+        position: relative; 
 }
 
 .generalbox     {
@@ -88,6 +88,7 @@ main    {
         transform: scaleY(0);
         transition: transform 0.5s;
         transform-origin: top;
+        z-index: 5;
 }
 
 .main-nav.translate     {
@@ -259,6 +260,17 @@ main    {
 
 
 @media screen and (min-width:600px)     {
+        .overlay        {
+                position: fixed;
+                top: 0px;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                display: none;
+                z-index: 3;
+        }
+
         header  { 
                 width: 100%; 
                 height: 6rem; 
@@ -303,6 +315,10 @@ main    {
 
         main    {
                 margin-top: 8rem;
+        }
+
+        .main-nav       {
+                top: -32px;
         }
 }
 
